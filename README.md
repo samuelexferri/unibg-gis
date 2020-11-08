@@ -10,7 +10,11 @@ Geographic Information Systems project
 
 ## Installation
 
-**TODO** Miniconda installation
+Miniconda installation (**TODO**)
+
+```bash
+conda activate cubeenv
+```
 
 ### Requirements
 
@@ -21,6 +25,10 @@ Geographic Information Systems project
 -   Install requirements
     ```bash
     pip install -r requirements.txt
+    ```
+-   Install Jupyter
+    ```bash
+    pip install jupyter
     ```
 
 ### Database setup
@@ -101,8 +109,16 @@ Download data from the example in the docs:
 
 ### Other
 
+-   Virtual environment in Conda
+
 ```bash
-conda install folium
+conda activate cubeenv
+```
+
+-   Jupyter notebook in Conda
+
+```bash
+jupyter notebook
 ```
 
 ## Authors
