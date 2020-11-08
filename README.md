@@ -6,9 +6,13 @@
 
 Geographic Information Systems project
 
+[Open Data Cube](https://www.opendatacube.org/overview)
+
 ![alt text](https://img.shields.io/badge/Language-Italian-infomrmational?style=for-the-badge)
 
 ## Installation
+
+[Open Data Cube Documentation (Installation)](https://datacube-core.readthedocs.io/en/latest/ops/install.html)
 
 Miniconda installation (**TODO**)
 
@@ -33,7 +37,7 @@ conda activate cubeenv
 
 ### Database setup
 
--   Install PostgreSQL
+-   Install [PostgreSQL](https://www.postgresql.org/download/)
 -   Create database
     ```bash
     psql -U postgres
@@ -41,18 +45,18 @@ conda activate cubeenv
     ```
 -   Create configuration file in `~/.datacube.conf`
 
-        ```toml
-        [datacube]
-        db_database: datacube
+    ```toml
+    [datacube]
+    db_database: datacube
 
-        # A blank host will use a local socket. Specify a hostname (such as localhost) to use TCP.
-        db_hostname: localhost
+    # A blank host will use a local socket. Specify a hostname (such as localhost) to use TCP.
+    db_hostname: localhost
 
-        # Credentials are optional: you might have other Postgres authentication configured.
-        # The default username otherwise is the current user id.
-        db_username: datacube
-        db_password: XXX
-        ```
+    # Credentials are optional: you might have other Postgres authentication configured.
+    # The default username otherwise is the current user id.
+    db_username: datacube
+    db_password: XXX
+    ```
 
 ### Datacube installation
 
