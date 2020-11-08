@@ -10,6 +10,8 @@ Geographic Information Systems project
 
 ## Installation
 
+**TODO** Miniconda installation
+
 ### Requirements
 
 -   Create new environment
@@ -76,6 +78,32 @@ Download data from the example in the docs:
 -   Download the necessary files
 
       ![](images/download-3.jpg)
+
+-   Rename `LC08_L1TP_097011_20201101_20201106_01_T2_MTL.txt` in `MTL.txt`
+
+-   Prepare the dataset with `ls_usgs_prepare.py` and rename the output file with extension `ls8_usgs_lv1.yaml`
+
+    ```bash
+    python ls_usgs_prepare.py --output ls8_usgs_lv1 C:\Users\samuelexferri\Desktop\ODC\LC08_L1TP_097011_20201101_20201106_01_T2a
+    ```
+
+-   Add product `ls_usgs_level1_scene.yaml` to datacube (THIS YAML MUST BE SEARCHED ON INTERNET)
+
+    ```bash
+    datacube product add ls_usgs_level1_scene.yaml
+    ```
+
+-   Add dataset `ls8_usgs_lv1.yaml` to datacube
+
+    ```bash
+    datacube dataset add --auto-match ls8_usgs_lv1.yaml
+    ```
+
+### Other
+
+```bash
+conda install folium
+```
 
 ## Authors
 
