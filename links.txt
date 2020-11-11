@@ -1,0 +1,26 @@
+Open Data Cube: https://www.opendatacube.org/overview
+
+Documentazione (Install): https://datacube-core.readthedocs.io/en/latest/ops/install.html
+
+GitHub:
+- datacube-core: https://github.com/opendatacube/datacube-core
+- datacube-core/docs/config_samples/dataset_types: https://github.com/opendatacube/datacube-core/tree/develop/docs/config_samples/dataset_types
+- datacube-dataset-config: https://github.com/opendatacube/datacube-dataset-config
+- datacube-notebooks: https://github.com/opendatacube/datacube-notebooks
+
+Dataset (Mail):
+- ESA: https://sentinel.esa.int/web/sentinel/technical-guides/sentinel-5p/products-algorithms
+- Sentinel5: https://www.sentinel-hub.com/sentinel-5/
+- Sentinel5 (Examples): https://docs.sentinel-hub.com/api/latest/data/sentinel-5p-l2/examples/
+- Tropomi: http://www.tropomi.eu/data-products/level-2-products
+
+Dataset (USGS):
+- USGS (EarthExplorer): https://earthexplorer.usgs.gov/
+
+PostgreSQL: https://www.postgresql.org/download/
+
+Non usate:
+- cube-in-a-box: https://github.com/opendatacube/cube-in-a-box
+- datacube-docker: https://github.com/opendatacube/datacube-docker
+
+Cosa abbiamo fatto noi: https://github.com/samuelexferri/unibg-gis
