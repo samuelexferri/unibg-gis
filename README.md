@@ -14,23 +14,18 @@ Geographic Information Systems project
 
 [Open Data Cube Documentation (Installation)](https://datacube-core.readthedocs.io/en/latest/ops/install.html)
 
-Miniconda installation (**TODO**)
-
-```bash
-conda activate cubeenv
-```
-
 ### Requirements
 
 -   Create new environment
     ```bash
-    virtualenv env
+    python -m venv env
+    .\env\Scripts\activate
     ```
 -   Install requirements
     ```bash
     pip install -r requirements.txt
     ```
--   Install Jupyter
+-   Install Jupyter Notebooks
     ```bash
     pip install jupyter
     ```
@@ -38,11 +33,20 @@ conda activate cubeenv
 ### Database setup
 
 -   Install [PostgreSQL](https://www.postgresql.org/download/)
+
+-   Add to environment variables
+
+
+    C:\Program Files\PostgreSQL\13\bin
+    C:\Program Files\PostgreSQL\13\lib
+
 -   Create database
+
     ```bash
     psql -U postgres
-    > create database datacube;
+    > CREATE DATABASE datacube;
     ```
+
 -   Create configuration file in `~/.datacube.conf`
 
     ```toml
@@ -55,7 +59,7 @@ conda activate cubeenv
     # Credentials are optional: you might have other Postgres authentication configured.
     # The default username otherwise is the current user id.
     db_username: datacube
-    db_password: XXX
+    db_password: 0
     ```
 
 ### Datacube installation
@@ -67,13 +71,20 @@ conda activate cubeenv
     python setup.py install
     ```
 
+-   Check datacube version
+
+    ```bash
+    pip install numpy==1.19.3
+    datacube --version
+    ```
+
 -   Initialize database schema
 
     ```bash
     datacube -v system init
     ```
 
-### Dataset
+### Dataset USGS
 
 Download data from the example in the docs:
 
@@ -111,15 +122,13 @@ Download data from the example in the docs:
     datacube dataset add --auto-match ls8_usgs_lv1.yaml
     ```
 
+### Dataset Sentinel5P (NetCDF)
+
+TODO
+
 ### Other
 
--   Virtual environment in Conda
-
-```bash
-conda activate cubeenv
-```
-
--   Jupyter notebook in Conda
+-   Jupyter Notebook
 
 ```bash
 jupyter notebook
