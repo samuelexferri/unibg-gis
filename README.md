@@ -124,7 +124,7 @@ Download data from the example in the docs:
 
 ### Dataset Sentinel5P (NetCDF)
 
-We are using `S5P_OFFL_L3__NO2____20200310T111355_20200310T125526_12472_01_010302_20200313T160857.nc` NetCDF file.
+We are using `S5P_OFFL_L3__NO2____20200310T111355_20200310T125526_12472_01_010302_20200313T160857.nc` NetCDF file (HARP Conventions).
 We need to develop a script with two `.yaml` output files in order to define the product and add the dataset data in the Open Data Cube.
 
 TODO
