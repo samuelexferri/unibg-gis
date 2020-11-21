@@ -1,0 +1,47 @@
+$schema: https://schemas.opendatacube.org/dataset
+
+# UUID of the dataset
+id: fb3afcb0-4301-57c5-8455-35a64e3b0c53
+
+# Product name
+product:
+  name: sentinel5p
+  href: https://www.sentinel-hub.com/sentinel-5/
+
+# Native CRS, assumed to be the same across all bands
+crs: epsg:4236
+
+# Optional GeoJSON object in the units of native CRS
+# Defines a polygon such that, all valid pixels across all bands are inside this polygon
+geometry:
+  type: Polygon
+  coordinates: [[]]
+
+# Mapping name:str -> { shape:     Tuple[ny: int, nx: int]
+#                       transform: Tuple[float x 9]}
+# Captures image size, and geo-registration
+grids:
+  default:
+    shape: [499, 999]
+    transform: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+
+# Lineage only references UUIDs of direct source datasets
+# Mapping name:str -> [UUID]
+lineage: {} # Set to empty object if no lineage is defined
+
+# Per band storage information and references into `grids`
+# Bands using "default" grid should not need to reference it
+measurements:
+  cloud_pressure:
+    band: 20
+    layer: cloud_pressure
+    path: datasets/S5P_OFFL_L3__NO2____20200310T111355_20200310T125526_12472_01_010302_20200313T160857.nc
+
+# Dataset properties, prefer STAC standard names here
+# Timestamp is the only compulsory field here
+properties:
+  # ODC specific "extensions"  
+  odc:file_format: NetCDF
+  odc:processing_datetime: '2018-01-01T00:00:00+00:00'
+  # If it's a single time instance use datetime
+  datetime: '2018-01-01T00:00:00+00:00' # Use UTC
