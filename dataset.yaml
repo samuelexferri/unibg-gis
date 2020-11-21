@@ -22,8 +22,8 @@ geometry:
 # Captures image size, and geo-registration
 grids:
   default:
-    shape: [499, 999]
-    transform: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+    shape: [499,999]
+    transform: [0.01,0.0,42,0.0,0.01,5,0.0,0.0,1.0]
 
 # Lineage only references UUIDs of direct source datasets
 # Mapping name:str -> [UUID]

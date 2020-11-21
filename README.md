@@ -84,7 +84,7 @@ Geographic Information Systems project
     datacube -v system init
     ```
 
-### ~~Dataset USGS~~
+### ~~Dataset USGS (Testing)~~
 
 Download data from the example in the docs:
 
@@ -124,9 +124,54 @@ Download data from the example in the docs:
 
 ### Dataset Sentinel5P (NetCDF)
 
-We are using `S5P_OFFL_L3__NO2____20200310T111355_20200310T125526_12472_01_010302_20200313T160857.nc` NetCDF file (HARP Conventions).
+We are using `S5P_OFFL_L3__NO2____20200310T111355_20200310T125526_12472_01_010302_20200313T160857.nc` NetCDF file  with HARP conventions.
 
-We need to develop a script with two `.yaml` output files in order to define the product and add the dataset data in the Open Data Cube.
+We need to create two `.yaml` files in order to define the product and add the dataset data in the Open Data Cube.
+
+#### Product YAML
+
+**TODO**pr_wtr.eatm.2018.test.ga-md.yaml
+
+#### Dataset YAML
+
+We are using `Dataset.ipynb` jupyter notebook.
+
+Initially we analyze a test dataset `dataset pr_wtr.eatm.2018.test.nc` from [GeoscienceAustralia (EO Datasets)](https://github.com/GeoscienceAustralia/eo-datasets).
+
+-   Install prerequisites:
+
+    ```bash
+     pip install eodatasets3 deepdiff ciso8601
+     pip install eodatasets3 --no-deps
+    ```
+
+-   Run the main script that generate `pr_wtr.eatm.2018.test.ga-md.yaml`
+
+-   In case of errors running the script, maybe this can resolve:
+
+    ```bash
+    pip install C:\GitHub\unibg-gis\whls\Shapely-1.7.1-cp38-cp38-win_amd64.whl
+    ```
+
+    or
+
+    ```bash
+    from shapely import speedups
+    speedups.disable()
+    ```
+
+-   We halved the documents dataset and saved in `pr_wtr.eatm.2018.test.ga-md_dimezzato.yaml`
+
+-   Validate `pr_wtr.eatm.2018.test.ga-md_dimezzato.yaml` (Option `--thorough` -> Attempt to read the data/measurements, and check their properties match the product):
+
+    ```bash
+    !eo3-validate "pr_wtr.eatm.2018.test.ga-md_dimezzato.yaml"
+    !eo3-validate --thorough "pr_wtr.eatm.2018.test.ga-md_dimezzato.yaml"
+    ```
+
+Now we have a `.yaml` file as basepoint to build our `dataset.yaml`.
+
+We analyze our Sentinel5P dataset `S5P_OFFL_L3__NO2____20200310T111355_20200310T125526_12472_01_010302_20200313T160857.nc` and rebuilt the `dataset.yaml` file.
 
 **TODO**
 
