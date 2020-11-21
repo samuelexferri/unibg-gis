@@ -1,2 +1,0 @@
-# Scripts
-Python processing scripts
