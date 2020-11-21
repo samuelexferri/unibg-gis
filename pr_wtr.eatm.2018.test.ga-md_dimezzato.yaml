@@ -37,7 +37,7 @@ measurements:
   water_vapour:
     band: 1
     layer: pr_wtr
-    path: pr_wtr.eatm.2018.test.nc
+    path: datasets/pr_wtr.eatm.2018.test.nc
 properties:
   item:providers:
   - name: NOAA/OAR/ESRL PSD
