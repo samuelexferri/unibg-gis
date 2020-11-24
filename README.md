@@ -144,16 +144,6 @@ Initially we analyze a test dataset `dataset pr_wtr.eatm.2018.test.nc` from [Geo
 
 Now we have a `pr_wtr.eatm.2018.test.ga-md_dimezzato.yaml` file as basepoint to build our `dataset.yaml`.
 
-**TODO**
-
-```bash
-# FILE product.yaml
-
-# TODO
-
-# HARP Conventions (Datetime, Indipendent)
-```
-
 #### Dataset YAML
 
 We are using `Dataset.ipynb` jupyter notebook.
