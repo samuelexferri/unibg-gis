@@ -44,6 +44,6 @@ measurements:
 properties:
   # ODC specific "extensions"  
   odc:file_format: NetCDF
-  odc:processing_datetime: '2018-01-01T00:00:00+00:00'
+  odc:processing_datetime: 2020-01-01T07:02:54.188Z
   # If it's a single time instance use datetime
-  datetime: '2018-01-01T00:00:00+00:00' # Use UTC
+  datetime: 2020-01-01T07:02:54.188Z # Use UTC

@@ -5,7 +5,7 @@ metadata_type: eo3
 
 metadata:
   product:
-  name: sentinel5p
+    name: sentinel5p
 
 measurements:
   - name: 'cloud_pressure'
