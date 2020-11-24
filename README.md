@@ -16,7 +16,7 @@ Geographic Information Systems project
 
 ### Requirements
 
--   Create new environment
+-   Create new virtual environment
     ```bash
     python -m venv env
     .\env\Scripts\activate
@@ -49,18 +49,16 @@ Geographic Information Systems project
 
 -   Create configuration file in `~/.datacube.conf`
 
-    ```toml
-    [datacube]
-    db_database: datacube
+        [datacube]
+        db_database: datacube
 
-    # A blank host will use a local socket. Specify a hostname (such as localhost) to use TCP.
-    db_hostname: localhost
+        # A blank host will use a local socket. Specify a hostname (such as localhost) to use TCP.
+        db_hostname: localhost
 
-    # Credentials are optional: you might have other Postgres authentication configured.
-    # The default username otherwise is the current user id.
-    db_username: datacube
-    db_password: 0
-    ```
+        # Credentials are optional: you might have other Postgres authentication configured.
+        # The default username otherwise is the current user id.
+        db_username: datacube
+        db_password: 0
 
 ### Datacube installation
 
@@ -84,57 +82,63 @@ Geographic Information Systems project
     datacube -v system init
     ```
 
-### ~~Dataset USGS (Testing)~~
+    ### ~~Dataset USGS (Test)~~
 
-Download data from the example in the docs:
+    Download data from the example in the docs:
 
--   Go to <https://earthexplorer.usgs.gov/>
+    -   Go to <https://earthexplorer.usgs.gov/>
 
--   Select "Landsat 8 OLI/TIRS C1 Level-1" data set
+    -   Select "Landsat 8 OLI/TIRS C1 Level-1" data set
 
-      ![](images/download-1.jpg)
+          ![](images/download-1.jpg)
 
--   Click on the download icon for the first data piece
+    -   Click on the download icon for the first data piece
 
-      ![](images/download-2.jpg)
+          ![](images/download-2.jpg)
 
--   Download the necessary files
+    -   Download the necessary files
 
-      ![](images/download-3.jpg)
+          ![](images/download-3.jpg)
 
--   Rename `LC08_L1TP_097011_20201101_20201106_01_T2_MTL.txt` in `MTL.txt`
+    -   Rename `LC08_L1TP_097011_20201101_20201106_01_T2_MTL.txt` in `MTL.txt`
 
--   Prepare the dataset with `ls_usgs_prepare.py` and rename the output file with extension `ls8_usgs_lv1.yaml`
+    -   Prepare the dataset with `ls_usgs_prepare.py` and rename the output file with extension `ls8_usgs_lv1.yaml`
 
-    ```bash
-    python ls_usgs_prepare.py --output ls8_usgs_lv1 C:\Users\samuelexferri\Desktop\ODC\LC08_L1TP_097011_20201101_20201106_01_T2a
-    ```
+        ```bash
+        python ls_usgs_prepare.py --output ls8_usgs_lv1 C:\Users\samuelexferri\Desktop\ODC\LC08_L1TP_097011_20201101_20201106_01_T2a
+        ```
 
--   Add product `ls_usgs_level1_scene.yaml` to datacube (THIS YAML MUST BE SEARCHED ON INTERNET)
+    -   Add product `ls_usgs_level1_scene.yaml` to datacube (THIS YAML MUST BE SEARCHED ON INTERNET)
 
-    ```bash
-    datacube product add ls_usgs_level1_scene.yaml
-    ```
+        ```bash
+        datacube product add ls_usgs_level1_scene.yaml
+        ```
 
--   Add dataset `ls8_usgs_lv1.yaml` to datacube
+    -   Add dataset `ls8_usgs_lv1.yaml` to datacube
 
-    ```bash
-    datacube dataset add --auto-match ls8_usgs_lv1.yaml
-    ```
+        ```bash
+        datacube dataset add --auto-match ls8_usgs_lv1.yaml
+        ```
 
 ### Dataset Sentinel5P (NetCDF)
 
-We are using `S5P_OFFL_L3__NO2____20200310T111355_20200310T125526_12472_01_010302_20200313T160857.nc` NetCDF file  with HARP conventions.
+We are using `S5P_OFFL_L3__NO2____20200310T111355_20200310T125526_12472_01_010302_20200313T160857.nc` NetCDF file with HARP conventions.
 
-We need to create two `.yaml` files in order to define the product and add the dataset data in the Open Data Cube.
+We need to create two `.yaml` files in order to define the product and add the dataset data in Open Data Cube.
 
 #### Product YAML
 
-**TODO**
+We create a `product.yaml` file in order to define the product in Open Data Cube.
 
-#### Dataset YAML
+-   Add product `product.yaml` to datacube
 
-We are using `Dataset.ipynb` jupyter notebook.
+    ```bash
+    datacube product add product.yaml
+    ```
+
+#### ~~Dataset YAML (Test)~~
+
+We are using `Dataset (Test).ipynb` jupyter notebook.
 
 Initially we analyze a test dataset `dataset pr_wtr.eatm.2018.test.nc` from [GeoscienceAustralia (EO Datasets)](https://github.com/GeoscienceAustralia/eo-datasets).
 
@@ -147,7 +151,7 @@ Initially we analyze a test dataset `dataset pr_wtr.eatm.2018.test.nc` from [Geo
 
 -   Run the main script that generate `pr_wtr.eatm.2018.test.ga-md.yaml`
 
--   In case of errors running the script, maybe this can resolve:
+-   In case of errors with `shapely`, maybe this can resolve:
 
     ```bash
     pip uninstall shapely
@@ -170,15 +174,83 @@ Initially we analyze a test dataset `dataset pr_wtr.eatm.2018.test.nc` from [Geo
     !eo3-validate --thorough "pr_wtr.eatm.2018.test.ga-md_dimezzato.yaml"
     ```
 
-Now we have a `.yaml` file as basepoint to build our `dataset.yaml`.
-
-We analyze our Sentinel5P dataset `S5P_OFFL_L3__NO2____20200310T111355_20200310T125526_12472_01_010302_20200313T160857.nc` and rebuilt the `dataset.yaml` file.
+Now we have a `pr_wtr.eatm.2018.test.ga-md_dimezzato.yaml` file as basepoint to build our `dataset.yaml`.
 
 **TODO**
 
-**TODO** (`pr_wtr.eatm.2018.test.ga-md.yaml`)
+```bash
+# FILE product.yaml
 
-pip install sqlalchemy==1.3.20
+# TODO
+
+# HARP Conventions (Datetime, Indipendent)
+```
+
+#### Dataset YAML
+
+We are using `Dataset.ipynb` jupyter notebook.
+
+We had to specify all the required parameters (extrapolating them from the NetCDF) by the EO3 convention.
+
+Dataset metadata documents define critical metadata about a dataset including:
+
+-   Available data measurements
+-   Platform and sensor names
+-   Geospatial extents and projection
+-   Acquisition time
+-   Provenance information
+
+We analyze our Sentinel5P dataset `S5P_OFFL_L3__NO2____20200310T111355_20200310T125526_12472_01_010302_20200313T160857.nc` (or `dataset.nc`) and create the `dataset.yaml` file.
+
+-   Add dataset `dataset.yaml` to datacube
+
+    ```bash
+    datacube dataset add --auto-match dataset.yaml
+    ```
+
+-   In case of errors with `shapely`, maybe this can resolve:
+
+    ```bash
+    pip uninstall shapely
+    pip install C:\GitHub\unibg-gis\whls\Shapely-1.7.1-cp38-cp38-win_amd64.whl
+    ```
+
+    or
+
+    ```bash
+    from shapely import speedups
+    speedups.disable()
+    ```
+
+-   In case of errors with `sqlalchemy`, maybe this can resolve:
+
+    ```bash
+    pip install sqlalchemy==1.3.20
+    ```
+
+**TODO**
+
+```bash
+# FILE dataset.yaml
+
+# $schema -> OK
+# id (UUID) -> CASO
+# product -> OK
+# crs -> CASO
+# geometry -> CASO
+# grids -> FORSE
+# lineage -> OK (Vuoto)
+# measurements -> AGGIUNGERE
+# properties -> CASO
+
+# HARP Conventions (Datetime, Indipendent)
+```
+
+### Analysis
+
+We are using `Analysis.ipynb` jupyter notebook.
+
+**TODO**
 
 ### Other
 
@@ -187,6 +259,8 @@ pip install sqlalchemy==1.3.20
 ```bash
 jupyter notebook
 ```
+
+**REMOVE**: `Dataset USGS` (Guide, Images), `pr_wtr.eatm.2018.test.ga-md.yaml` (Files, Guide)
 
 ## Authors
 
