@@ -12,7 +12,7 @@ Geographic Information Systems project
 
 ## Installation
 
-[Open Data Cube Documentation (Installation)](https://datacube-core.readthedocs.io/en/latest/ops/install.html)
+Follow the documentation [Open Data Cube Documentation (Installation)](https://datacube-core.readthedocs.io/en/latest/ops/install.html)
 
 ### Requirements
 
@@ -21,20 +21,21 @@ Geographic Information Systems project
     python -m venv env
     .\env\Scripts\activate
     ```
--   Install requirements:
+-   Install requirements (some `.whl` files):
     ```bash
     pip install -r requirements.txt
     ```
--   Install Jupyter Notebooks:
+-   Install Jupyter notebooks:
     ```bash
     pip install jupyter
+    jupyter notebook
     ```
 
 ### Database setup
 
 -   Install [PostgreSQL](https://www.postgresql.org/download/)
 
--   Add PostgreSQL to environment variables:
+-   Add PostgreSQL to the system environment variables (Path):
 
     ```bash
     C:\Program Files\PostgreSQL\13\bin
@@ -92,23 +93,15 @@ Geographic Information Systems project
 
 We are using `S5P_OFFL_L3__NO2____20200310T111355_20200310T125526_12472_01_010302_20200313T160857.nc` (or `dataset.nc`) NetCDF file with HARP conventions.
 
+**Note:** Dataset used are not in the repository, download it from [Google Drive](https://drive.google.com/drive/folders/1blFp7IfUM_IRgB3iradfxHqCEdZMxi7T).
+
 We need to create two `.yaml` files in order to define the product and add the dataset data in Open Data Cube.
-
-#### Product YAML
-
-We create a `product.yaml` file in order to define the product in Open Data Cube.
-
--   Add product `product.yaml` to datacube:
-
-    ```bash
-    datacube product add product.yaml
-    ```
 
 #### ~~Dataset YAML (Test)~~
 
 We are using `Dataset (Test).ipynb` jupyter notebook.
 
-Initially we analyze a test dataset `dataset pr_wtr.eatm.2018.test.nc` from [GeoscienceAustralia (EO Datasets)](https://github.com/GeoscienceAustralia/eo-datasets).
+Initially we analyze a test dataset `dataset pr_wtr.eatm.2018.test.nc` from [GeoscienceAustralia (EO Datasets)](https://github.com/GeoscienceAustralia/eo-datasets) in order to have a basic starting point.
 
 -   Install prerequisites:
 
@@ -144,11 +137,21 @@ Initially we analyze a test dataset `dataset pr_wtr.eatm.2018.test.nc` from [Geo
 
 Now we have a `pr_wtr.eatm.2018.test.ga-md_dimezzato.yaml` file as basepoint to build our `dataset.yaml`.
 
+#### Product YAML
+
+We create a `product.yaml` file in order to define the product in Open Data Cube.
+
+-   Add product `product.yaml` to datacube:
+
+    ```bash
+    datacube product add product.yaml
+    ```
+
 #### Dataset YAML
 
 We are using `Dataset.ipynb` jupyter notebook.
 
-We had to specify all the required parameters (extrapolating them from the NetCDF) by the EO3 convention.
+We had to specify all the required parameters by the EO3 convention, extrapolating them from the NetCDF.
 
 Dataset metadata documents define critical metadata about a dataset including:
 
@@ -216,14 +219,6 @@ We analyze our Sentinel5P dataset `S5P_OFFL_L3__NO2____20200310T111355_20200310T
 We are using `Analysis.ipynb` jupyter notebook.
 
 **TODO**
-
-### Other
-
--   Jupyter Notebook
-
-    ```bash
-    jupyter notebook
-    ```
 
 **REMOVE**:  `pr_wtr.eatm.2018.test.ga-md.yaml` (Files, Guide)
 
