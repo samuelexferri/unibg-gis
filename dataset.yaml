@@ -35,14 +35,13 @@ lineage: {} # Set to empty object if no lineage is defined
 # Bands using "default" grid should not need to reference it
 measurements:
   cloud_pressure:
-    band: 20
     layer: cloud_pressure
-    path: datasets/S5P_OFFL_L3__NO2____20200310T111355_20200310T125526_12472_01_010302_20200313T160857.nc
+    path: dataset.nc
 
 # Dataset properties, prefer STAC standard names here
 # Timestamp is the only compulsory field here
 properties:
-  # ODC specific "extensions"  
+  # ODC specific "extensions"
   odc:file_format: NetCDF
   odc:processing_datetime: 2020-01-01T07:02:54.188Z
   # If it's a single time instance use datetime

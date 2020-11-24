@@ -150,6 +150,7 @@ Initially we analyze a test dataset `dataset pr_wtr.eatm.2018.test.nc` from [Geo
 -   In case of errors running the script, maybe this can resolve:
 
     ```bash
+    pip uninstall shapely
     pip install C:\GitHub\unibg-gis\whls\Shapely-1.7.1-cp38-cp38-win_amd64.whl
     ```
 
@@ -176,6 +177,8 @@ We analyze our Sentinel5P dataset `S5P_OFFL_L3__NO2____20200310T111355_20200310T
 **TODO**
 
 **TODO** (`pr_wtr.eatm.2018.test.ga-md.yaml`)
+
+pip install sqlalchemy==1.3.20
 
 ### Other
 
