@@ -16,16 +16,16 @@ Geographic Information Systems project
 
 ### Requirements
 
--   Create new virtual environment
+-   Create new virtual environment:
     ```bash
     python -m venv env
     .\env\Scripts\activate
     ```
--   Install requirements
+-   Install requirements:
     ```bash
     pip install -r requirements.txt
     ```
--   Install Jupyter Notebooks
+-   Install Jupyter Notebooks:
     ```bash
     pip install jupyter
     ```
@@ -34,20 +34,21 @@ Geographic Information Systems project
 
 -   Install [PostgreSQL](https://www.postgresql.org/download/)
 
--   Add to environment variables
+-   Add PostgreSQL to environment variables:
 
-
+    ```bash
     C:\Program Files\PostgreSQL\13\bin
     C:\Program Files\PostgreSQL\13\lib
+    ```
 
--   Create database
+-   Create database:
 
     ```bash
     psql -U postgres
     > CREATE DATABASE datacube;
     ```
 
--   Create configuration file in `~/.datacube.conf`
+-   Create configuration file in `~/.datacube.conf`:
 
         [datacube]
         db_database: datacube
@@ -62,67 +63,34 @@ Geographic Information Systems project
 
 ### Datacube installation
 
--   Install datacube
+-   Install datacube:
 
     ```bash
     cd datacube-core-develop
     python setup.py install
     ```
 
--   Check datacube version
+-   Check datacube version:
 
     ```bash
-    pip install numpy==1.19.3
     datacube --version
     ```
 
--   Initialize database schema
+-   In case of errors with `numpy`, maybe this can resolve:
+
+    ```bash
+    pip install numpy==1.19.3
+    ```
+
+-   Initialize database schema:
 
     ```bash
     datacube -v system init
     ```
 
-    ### ~~Dataset USGS (Test)~~
-
-    Download data from the example in the docs:
-
-    -   Go to <https://earthexplorer.usgs.gov/>
-
-    -   Select "Landsat 8 OLI/TIRS C1 Level-1" data set
-
-          ![](images/download-1.jpg)
-
-    -   Click on the download icon for the first data piece
-
-          ![](images/download-2.jpg)
-
-    -   Download the necessary files
-
-          ![](images/download-3.jpg)
-
-    -   Rename `LC08_L1TP_097011_20201101_20201106_01_T2_MTL.txt` in `MTL.txt`
-
-    -   Prepare the dataset with `ls_usgs_prepare.py` and rename the output file with extension `ls8_usgs_lv1.yaml`
-
-        ```bash
-        python ls_usgs_prepare.py --output ls8_usgs_lv1 C:\Users\samuelexferri\Desktop\ODC\LC08_L1TP_097011_20201101_20201106_01_T2a
-        ```
-
-    -   Add product `ls_usgs_level1_scene.yaml` to datacube (THIS YAML MUST BE SEARCHED ON INTERNET)
-
-        ```bash
-        datacube product add ls_usgs_level1_scene.yaml
-        ```
-
-    -   Add dataset `ls8_usgs_lv1.yaml` to datacube
-
-        ```bash
-        datacube dataset add --auto-match ls8_usgs_lv1.yaml
-        ```
-
 ### Dataset Sentinel5P (NetCDF)
 
-We are using `S5P_OFFL_L3__NO2____20200310T111355_20200310T125526_12472_01_010302_20200313T160857.nc` NetCDF file with HARP conventions.
+We are using `S5P_OFFL_L3__NO2____20200310T111355_20200310T125526_12472_01_010302_20200313T160857.nc` (or `dataset.nc`) NetCDF file with HARP conventions.
 
 We need to create two `.yaml` files in order to define the product and add the dataset data in Open Data Cube.
 
@@ -130,7 +98,7 @@ We need to create two `.yaml` files in order to define the product and add the d
 
 We create a `product.yaml` file in order to define the product in Open Data Cube.
 
--   Add product `product.yaml` to datacube
+-   Add product `product.yaml` to datacube:
 
     ```bash
     datacube product add product.yaml
@@ -170,8 +138,8 @@ Initially we analyze a test dataset `dataset pr_wtr.eatm.2018.test.nc` from [Geo
 -   Validate `pr_wtr.eatm.2018.test.ga-md_dimezzato.yaml` (Option `--thorough` -> Attempt to read the data/measurements, and check their properties match the product):
 
     ```bash
-    !eo3-validate "pr_wtr.eatm.2018.test.ga-md_dimezzato.yaml"
-    !eo3-validate --thorough "pr_wtr.eatm.2018.test.ga-md_dimezzato.yaml"
+    eo3-validate "pr_wtr.eatm.2018.test.ga-md_dimezzato.yaml"
+    eo3-validate --thorough "pr_wtr.eatm.2018.test.ga-md_dimezzato.yaml"
     ```
 
 Now we have a `pr_wtr.eatm.2018.test.ga-md_dimezzato.yaml` file as basepoint to build our `dataset.yaml`.
@@ -202,7 +170,14 @@ Dataset metadata documents define critical metadata about a dataset including:
 
 We analyze our Sentinel5P dataset `S5P_OFFL_L3__NO2____20200310T111355_20200310T125526_12472_01_010302_20200313T160857.nc` (or `dataset.nc`) and create the `dataset.yaml` file.
 
--   Add dataset `dataset.yaml` to datacube
+-   Validate `dataset.yaml` (Option `--thorough` -> Attempt to read the data/measurements, and check their properties match the product):
+
+    ```bash
+    eo3-validate "dataset.yaml"
+    eo3-validate --thorough "dataset.yaml"
+    ```
+
+-   Add dataset `dataset.yaml` to datacube:
 
     ```bash
     datacube dataset add --auto-match dataset.yaml
@@ -256,11 +231,11 @@ We are using `Analysis.ipynb` jupyter notebook.
 
 -   Jupyter Notebook
 
-```bash
-jupyter notebook
-```
+    ```bash
+    jupyter notebook
+    ```
 
-**REMOVE**: `Dataset USGS` (Guide, Images), `pr_wtr.eatm.2018.test.ga-md.yaml` (Files, Guide)
+**REMOVE**:  `pr_wtr.eatm.2018.test.ga-md.yaml` (Files, Guide)
 
 ## Authors
 
