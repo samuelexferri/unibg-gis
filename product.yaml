@@ -1,0 +1,14 @@
+name: sentinel5p
+description: This is the description
+
+metadata_type: eo3
+
+metadata:
+  product:
+  name: sentinel5p
+
+measurements:
+  - name: 'cloud_pressure'
+    dtype: float64
+    nodata: -1
+    units: 'percent'

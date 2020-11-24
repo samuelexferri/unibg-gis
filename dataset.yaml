@@ -9,13 +9,15 @@ product:
   href: https://www.sentinel-hub.com/sentinel-5/
 
 # Native CRS, assumed to be the same across all bands
-crs: epsg:4236
+crs: epsg:32656
 
 # Optional GeoJSON object in the units of native CRS
 # Defines a polygon such that, all valid pixels across all bands are inside this polygon
 geometry:
   type: Polygon
-  coordinates: [[]]
+  coordinates: [[[609615.0, -3077085.0], [378285.0, -3077085.0],
+                 [378285.0, -3310515.0], [609615.0, -3310515.0],
+                 [609615.0, -3077085.0]]]
 
 # Mapping name:str -> { shape:     Tuple[ny: int, nx: int]
 #                       transform: Tuple[float x 9]}

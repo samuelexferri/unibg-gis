@@ -44,7 +44,7 @@ properties:
     roles:
     - producer
     url: https://www.esrl.noaa.gov/psd/data/gridded/data.ncep.reanalysis.derived.surface.html
-  odc:creation_datetime: '2020-11-21T15:12:47.048785+00:00'
+  odc:creation_datetime: '2020-11-24T09:15:01.843414+00:00'
   odc:file_format: NetCDF
 ...
 ---
@@ -93,6 +93,6 @@ properties:
     roles:
     - producer
     url: https://www.esrl.noaa.gov/psd/data/gridded/data.ncep.reanalysis.derived.surface.html
-  odc:creation_datetime: '2020-11-21T15:12:47.048785+00:00'
+  odc:creation_datetime: '2020-11-24T09:15:01.843414+00:00'
   odc:file_format: NetCDF
 ...
