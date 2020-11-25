@@ -204,7 +204,7 @@ We analyze our Sentinel5P dataset `S5P_OFFL_L3__NO2____20200310T111355_20200310T
 # $schema -> OK
 # id (UUID) -> CASO
 # product -> OK
-# crs -> CASO
+# crs -> OK
 # geometry -> CASO
 # grids -> FORSE
 # lineage -> OK (Vuoto)

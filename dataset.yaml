@@ -9,7 +9,7 @@ product:
   href: https://www.sentinel-hub.com/sentinel-5/
 
 # Native CRS, assumed to be the same across all bands
-crs: epsg:32656
+crs: epsg:4326
 
 # Optional GeoJSON object in the units of native CRS
 # Defines a polygon such that, all valid pixels across all bands are inside this polygon
