@@ -15,16 +15,14 @@ crs: epsg:4326
 # Defines a polygon such that, all valid pixels across all bands are inside this polygon
 geometry:
   type: Polygon
-  coordinates: [[[609615.0, -3077085.0], [378285.0, -3077085.0],
-                 [378285.0, -3310515.0], [609615.0, -3310515.0],
-                 [609615.0, -3077085.0]]]
+  coordinates: [[[15, 47], [15, 42], [5, 42], [5, 47], [15, 47]]]
 
 # Mapping name:str -> { shape:     Tuple[ny: int, nx: int]
 #                       transform: Tuple[float x 9]}
 # Captures image size, and geo-registration
 grids:
   default:
-    shape: [499,999]
+    shape: [500,1000]
     transform: [0.01,0.0,42,0.0,0.01,5,0.0,0.0,1.0]
 
 # Lineage only references UUIDs of direct source datasets

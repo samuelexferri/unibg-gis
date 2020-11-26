@@ -15,4 +15,4 @@ measurements:
 storage:
     driver: NetCDFCF
     crs: EPSG:4326
-    dimension_order: [time, latitude, longitude]
+    dimension_order: [time, latitude, longitude] 
