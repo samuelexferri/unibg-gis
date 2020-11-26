@@ -1,5 +1,5 @@
 name: sentinel5p
-description: This is the description
+description: Sentinel5P NetCDF with various layers
 metadata_type: eo3
 
 metadata:
@@ -10,4 +10,9 @@ measurements:
     - name: 'cloud_pressure'
       dtype: float64
       nodata: -1
-      units: 'percent'
+      units: 'Pa'
+
+storage:
+    driver: NetCDFCF
+    crs: EPSG:4326
+    dimension_order: [time, latitude, longitude]
