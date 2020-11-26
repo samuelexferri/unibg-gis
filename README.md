@@ -196,7 +196,9 @@ We analyze our Sentinel5P dataset `S5P_OFFL_L3__NO2____20200310T111355_20200310T
     pip install sqlalchemy==1.3.20
     ```
 
-**TODO**
+### Automated Script
+
+**TODO **
 
 ```bash
 # FILE dataset.yaml
@@ -205,11 +207,11 @@ We analyze our Sentinel5P dataset `S5P_OFFL_L3__NO2____20200310T111355_20200310T
 # id (UUID) -> CASO
 # product -> OK
 # crs -> OK
-# geometry -> CASO
-# grids -> FORSE
+# geometry -> OK
+# grids -> CASO
 # lineage -> OK (Vuoto)
 # measurements -> AGGIUNGERE
-# properties -> CASO
+# properties -> OK
 
 # HARP Conventions (Datetime, Indipendent)
 ```

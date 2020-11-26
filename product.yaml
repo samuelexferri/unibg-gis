@@ -13,6 +13,6 @@ measurements:
       units: 'Pa'
 
 storage:
-    driver: NetCDFCF
+    driver: NetCDF CF
     crs: EPSG:4326
     dimension_order: [time, latitude, longitude] 
