@@ -6,6 +6,8 @@
 
 Geographic Information Systems project
 
+Creation of an Open Data Cube and analysis of pollutant emissions in Lombardy
+
 [Open Data Cube](https://www.opendatacube.org/overview)
 
 ![alt text](https://img.shields.io/badge/Language-Italian-infomrmational?style=for-the-badge)
