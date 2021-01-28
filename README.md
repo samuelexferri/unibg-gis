@@ -8,6 +8,8 @@ Geographic Information Systems project
 
 Creation of an Open Data Cube and analysis of pollutant emissions in Lombardy
 
+**Note:** Follow the documentation for all the information, in this file there will be only the part relating to the installation of the Open Data Cube.
+
 [Open Data Cube](https://www.opendatacube.org/overview)
 
 ![alt text](https://img.shields.io/badge/Language-Italian-infomrmational?style=for-the-badge)
@@ -17,6 +19,8 @@ Creation of an Open Data Cube and analysis of pollutant emissions in Lombardy
 Follow the documentation [Open Data Cube Documentation (Installation)](https://datacube-core.readthedocs.io/en/latest/ops/install.html)
 
 ### Requirements
+
+Python v3.8.6
 
 -   Create new virtual environment:
     ```bash
@@ -66,6 +70,8 @@ Follow the documentation [Open Data Cube Documentation (Installation)](https://d
 
 ### Datacube installation
 
+Get `datacube-core-develop` from [here](https://github.com/opendatacube/datacube-core).
+
 -   Install datacube:
 
     ```bash
@@ -98,46 +104,6 @@ We are using `S5P_OFFL_L3__NO2____20200310T111355_20200310T125526_12472_01_01030
 **Note:** Dataset used are not in the repository, download it from [Google Drive](https://drive.google.com/drive/folders/1blFp7IfUM_IRgB3iradfxHqCEdZMxi7T).
 
 We need to create two `.yaml` files in order to define the product and add the dataset data in Open Data Cube.
-
-#### ~~Dataset YAML (Test)~~
-
-We are using `Dataset (Test).ipynb` jupyter notebook.
-
-Initially we analyze a test dataset `dataset pr_wtr.eatm.2018.test.nc` from [GeoscienceAustralia (EO Datasets)](https://github.com/GeoscienceAustralia/eo-datasets) in order to have a basic starting point.
-
--   Install prerequisites:
-
-    ```bash
-     pip install eodatasets3 deepdiff ciso8601
-     pip install eodatasets3 --no-deps
-    ```
-
--   Run the main script that generate `pr_wtr.eatm.2018.test.ga-md.yaml`
-
--   In case of errors with `shapely`, maybe this can resolve:
-
-    ```bash
-    pip uninstall shapely
-    pip install C:\GitHub\unibg-gis\whls\Shapely-1.7.1-cp38-cp38-win_amd64.whl
-    ```
-
-    or
-
-    ```bash
-    from shapely import speedups
-    speedups.disable()
-    ```
-
--   We halved the documents dataset and saved in `pr_wtr.eatm.2018.test.ga-md_dimezzato.yaml`
-
--   Validate `pr_wtr.eatm.2018.test.ga-md_dimezzato.yaml` (Option `--thorough` -> Attempt to read the data/measurements, and check their properties match the product):
-
-    ```bash
-    eo3-validate "pr_wtr.eatm.2018.test.ga-md_dimezzato.yaml"
-    eo3-validate --thorough "pr_wtr.eatm.2018.test.ga-md_dimezzato.yaml"
-    ```
-
-Now we have a `pr_wtr.eatm.2018.test.ga-md_dimezzato.yaml` file as basepoint to build our `dataset.yaml`.
 
 #### Product YAML
 
@@ -200,7 +166,7 @@ We analyze our Sentinel5P dataset `S5P_OFFL_L3__NO2____20200310T111355_20200310T
 
 ### Automated Script
 
-**TODO **
+**TODO**
 
 ```bash
 # FILE dataset.yaml
@@ -220,11 +186,7 @@ We analyze our Sentinel5P dataset `S5P_OFFL_L3__NO2____20200310T111355_20200310T
 
 ### Analysis
 
-We are using `Analysis.ipynb` jupyter notebook.
-
-**TODO**
-
-**REMOVE**:  `pr_wtr.eatm.2018.test.ga-md.yaml` (Files, Guide)
+See the full docs!
 
 ## Authors
 
