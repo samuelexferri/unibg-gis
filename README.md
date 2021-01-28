@@ -99,9 +99,9 @@ Get `datacube-core-develop` from [here](https://github.com/opendatacube/datacube
 
 ### Dataset Sentinel5P (NetCDF)
 
-We are using `S5P_OFFL_L3__NO2____20200310T111355_20200310T125526_12472_01_010302_20200313T160857.nc` (or `dataset.nc`) NetCDF file with HARP conventions.
+We are using `dataset.nc` NetCDF file with HARP conventions.
 
-**Note:** Dataset used are not in the repository, download it from [Google Drive](https://drive.google.com/drive/folders/1blFp7IfUM_IRgB3iradfxHqCEdZMxi7T).
+**Note:** Dataset used are not in the repository due to big size!
 
 We need to create two `.yaml` files in order to define the product and add the dataset data in Open Data Cube.
 
@@ -119,7 +119,7 @@ We create a `product.yaml` file in order to define the product in Open Data Cube
 
 We are using `Dataset.ipynb` jupyter notebook.
 
-We had to specify all the required parameters by the EO3 convention, extrapolating them from the NetCDF.
+We had to specify all the required parameters by the [EO3 convention](https://datacube-core.readthedocs.io/en/latest/ops/dataset_documents.html), extrapolating them from the NetCDF.
 
 Dataset metadata documents define critical metadata about a dataset including:
 
@@ -129,7 +129,7 @@ Dataset metadata documents define critical metadata about a dataset including:
 -   Acquisition time
 -   Provenance information
 
-We analyze our Sentinel5P dataset `S5P_OFFL_L3__NO2____20200310T111355_20200310T125526_12472_01_010302_20200313T160857.nc` (or `dataset.nc`) and create the `dataset.yaml` file.
+We analyze our Sentinel5P dataset `dataset.nc` and create the `dataset.yaml` file.
 
 -   Validate `dataset.yaml` (Option `--thorough` -> Attempt to read the data/measurements, and check their properties match the product):
 
@@ -164,25 +164,9 @@ We analyze our Sentinel5P dataset `S5P_OFFL_L3__NO2____20200310T111355_20200310T
     pip install sqlalchemy==1.3.20
     ```
 
-### Automated Script
+### Automated YAML Script
 
 **TODO**
-
-```bash
-# FILE dataset.yaml
-
-# $schema -> OK
-# id (UUID) -> CASO
-# product -> OK
-# crs -> OK
-# geometry -> OK
-# grids -> CASO
-# lineage -> OK (Vuoto)
-# measurements -> AGGIUNGERE
-# properties -> OK
-
-# HARP Conventions (Datetime, Indipendent)
-```
 
 ### Analysis
 
