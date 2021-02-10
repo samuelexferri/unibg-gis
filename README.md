@@ -166,7 +166,11 @@ We analyze our Sentinel5P dataset `dataset.nc` and create the `dataset.yaml` fil
 
 ### Automated YAML Script
 
-**TODO**
+Se i dati sono già stati preparati dalla sorgente per l'inclusione nel progetto Open Data Cube, essi potranno essere importati nel database senza ulteriori passi, in quanto saranno già pacchettizzati con documenti *dataset* e *product* compatibili con ODC e saranno quindi già pronti all'indicizzazione immediata. 
+
+Nel caso in cui invece i dati siano da sorgenti esterne o non compatibili, sarà necessario generare questi documenti *dataset*  e *product* a mano. Questo è ciò che abbiamo fatto per la prima importazione dei dati nel Data Cube. Successivamente abbiamo creato un cosiddetto "Data Preparation Script", ossia uno script python che legge il formato dei metadati del file di input e genera automaticamente i documenti *dataset* e *product* necessari all'importazione.
+
+Lo script di generazione automatica è presente nel file `/odc/yaml_generator/generate_yaml.py` della repository.
 
 ### Analysis
 
