@@ -1,5 +1,5 @@
 .vscode
-dataset.nc
-.vscode
-__pycache__
 .ipynb_checkpoints
+__pycache__
+arcgis/
+dataset.nc
