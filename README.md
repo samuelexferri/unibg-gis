@@ -44,8 +44,8 @@ Python v3.8.6
 -   Add PostgreSQL to the system environment variables (Path):
 
     ```bash
-    C:\Program Files\PostgreSQL\13\bin
-    C:\Program Files\PostgreSQL\13\lib
+    C:/Program Files/PostgreSQL/13/bin
+    C:/Program Files/PostgreSQL/13/lib
     ```
 
 -   Create database:
@@ -148,7 +148,7 @@ We analyze our Sentinel5P dataset `dataset.nc` and create the `dataset.yaml` fil
 
     ```bash
     pip uninstall shapely
-    pip install C:\GitHub\unibg-gis\whls\Shapely-1.7.1-cp38-cp38-win_amd64.whl
+    pip install C:/GitHub/unibg-gis/whls/Shapely-1.7.1-cp38-cp38-win_amd64.whl
     ```
 
     or
